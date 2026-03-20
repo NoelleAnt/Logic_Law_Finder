@@ -201,7 +201,7 @@ function analyze() {
 
     const inputSig = getSignature(input);
     if (!inputSig) {
-        alert("Syntax Error! Use P, Q, R, &, |, !, ->, <->");
+        alert("Syntax Error! Use variables (P/Q/R or TRUE/FALSE) and operators: &, &&, ∧, |, ||, ∨, !, ~, ¬, ^, ⊕, ->, →, <->, ↔, <=>, ≡, NAND, NOR");
         return;
     }
 
