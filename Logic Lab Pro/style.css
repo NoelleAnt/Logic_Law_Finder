@@ -1,0 +1,189 @@
+/* style.css */
+
+:root {
+    --primary: #6366f1;
+    --secondary: #a855f7;
+    --bg: #0f172a;
+    --card: rgba(30, 41, 59, 0.8);
+    --text: #f8fafc;
+    --success: #10b981;
+    --danger: #ef4444;
+    --accent: #f472b6;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at top left, #1e1b4b, #0f172a);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Glassmorphism Card Container */
+.glass-card {
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Safari Support */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+}
+
+/* Typography with Vendor Prefixes for Compatibility */
+h1 { 
+    font-size: 1.8rem; 
+    margin: 0 0 0.5rem 0; 
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    
+    /* Cross-browser background-clip for text gradients */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+}
+
+p { 
+    color: #94a3b8; 
+    font-size: 0.9rem; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 2px solid #334155;
+    padding: 14px;
+    border-radius: 12px;
+    color: #38bdf8;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+/* Primary Action Button */
+button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Results Display Area */
+#result-area {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.25);
+    display: none; /* Controlled by JS */
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.law-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.law-title { 
+    font-weight: 700; 
+    font-size: 1.4rem; 
+    margin-bottom: 4px; 
+    color: #fff;
+}
+
+.subtitle { 
+    font-size: 0.85rem; 
+    color: #94a3b8; 
+}
+
+.formula { 
+    font-family: 'Fira Code', monospace; 
+    color: var(--accent); 
+    font-size: 1.1rem; 
+    margin-top: 8px; 
+    margin-bottom: 20px;
+    word-break: break-all;
+}
+
+/* Truth Table Styling */
+#truth-table-container {
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    position: sticky;
+    top: 0;
+}
+
+.val-true { color: var(--success); font-weight: bold; }
+.val-false { color: var(--danger); font-weight: bold; }
+
+/* Custom Scrollbar for Truth Table */
+#truth-table-container::-webkit-scrollbar {
+    width: 6px;
+}
+#truth-table-container::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}

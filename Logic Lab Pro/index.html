@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Lab Pro: 3-Variable Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glass-card">
+    <h1>Logic Lab Pro</h1>
+    <p>Supports <code>P, Q, R</code> | <code>&, |, !, ->, <-></code></p>
+    
+    <div class="input-group">
+        <input type="text" id="logicInput" placeholder="e.g. P & (Q | R)" spellcheck="false">
+    </div>
+    
+    <button id="analyzeBtn">Analyze Logic</button>
+
+    <div id="result-area">
+        <div class="law-tag" id="lawLabel">Identity Found</div>
+        <div id="lawName" class="law-title"></div>
+        <div class="subtitle">Statement Type:</div>
+        <div class="formula" id="lawType"></div>
+        <div class="subtitle">Equivalent Simplification:</div>
+        <div class="formula" id="lawEquiv"></div>
+        
+        <div id="truth-table-container">
+            </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
