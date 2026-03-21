@@ -253,12 +253,12 @@ function analyze() {
     if (match) {
         label.innerText = "Identity Matched";
         label.style.background = "var(--primary)";
-        name.innerText = `${match.name} (${statementType})`;
+        name.innerText = match.name;
         equiv.innerText = match.equiv;
     } else {
         label.innerText = "Custom Statement";
         label.style.background = "#64748b";
-        name.innerText = `Unique Logic Pattern (${statementType})`;
+        name.innerText = "Unique Logic Pattern";
         equiv.innerText = "No named standard identity found.";
     }
 }
